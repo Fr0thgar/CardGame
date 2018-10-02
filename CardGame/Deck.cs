@@ -15,23 +15,38 @@ namespace CardGame
             for (int i = 0; i < 10; i++)
             {
                 cards[i] = new Card("red", i);
-                    cards[i+9] = new Card("red", i);
+                cards[i + 9] = new Card("red", i);
 
-                cards[i+19] = new Card("blue",i);
-                    cards[i + 28] = new Card("blue", i);
+                cards[i + 19] = new Card("blue", i);
+                cards[i + 28] = new Card("blue", i);
 
-                cards[i+38] = new Card("yellow", i);
-                    cards[i + 47] = new Card("yellow", i);
+                cards[i + 38] = new Card("yellow", i);
+                cards[i + 47] = new Card("yellow", i);
 
-                cards[i+57] = new Card("green", i);
-                    cards[i + 66] = new Card("green", i);
+                cards[i + 57] = new Card("green", i);
+                cards[i + 66] = new Card("green", i);
             }
 
-            for (int i = 0; i < cards.Length; i++)
-            {
-                Console.WriteLine(cards[i]);
-            }
+            shuffel();
+
         }
 
+        private void shuffel()
+        {
+            Random random = new Random();
+            Card[] randomCards = cards.OrderBy(x => random.Next()).ToArray();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < cards.Length; i++)
+            {
+                sb.Append(cards[i]);
+                sb.Append("; ");
+            }
+
+            return sb.ToString();
+        }
     }
 }
