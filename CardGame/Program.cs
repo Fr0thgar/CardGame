@@ -10,6 +10,7 @@ namespace CardGame
     {
         static void Main(string[] args)
         {
+            Deck deck = new Deck();
         }
     }
 }
