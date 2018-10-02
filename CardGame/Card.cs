@@ -19,7 +19,7 @@ namespace CardGame
 
         public override string ToString()
         {
-            return Value + ", " + Colour;
+            return $"[{Value}, {Colour}]";
         }
     }
 }
